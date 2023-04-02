@@ -1,69 +1,32 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 
-export default function Input({ onSendMessage }) {
+function Input(props) {
   const [text, setText] = useState("");
-  const handleChange = (e) => {
+
+  function onChange(e) {
     setText(e.target.value);
-  };
-  const handleAddPoruka = (e) => {
-    e.prevent.default();
+  }
+
+  function onSubmit(e) {
+    e.preventDefault();
     setText("");
-    onSendMessage(text);
-  };
+    props.onSendMessage(text);
+  }
 
   return (
     <div className="Input">
-      <form onSubmit={handleAddPoruka}>
+      <form onSubmit={onSubmit}>
         <input
-          placeholder="Unesi poruku ..."
-          autoFocus={true}
+          onChange={onChange}
           value={text}
-          onChange={handleChange}
+          type="text"
+          placeholder="Upiši svoju poruku"
+          autoFocus={true}
         />
-        <button
-          disabled={!text}
-          className={!text ? "button-disabled" : "button-active"}
-        >
-          Pošalji →
-        </button>
+        <button>Send</button>
       </form>
     </div>
   );
 }
 
-// class Input extends Component {
-//   state = {
-//     text: "",
-//   };
-
-//   onChange(e) {
-//     this.setState({ text: e.target.value });
-//   }
-
-//   onSubmit(e) {
-//     e.preventDefault();
-//     this.setState({ text: "" });
-//     this.props.onSendMessage(this.state.text);
-//   }
-
-//   render() {
-//     return (
-//       <div className="Input">
-//         <form onSubmit={(e) => this.onSubmit(e)}>
-//           <input
-//             onChange={(e) => this.onChange(e)}
-//             value={this.state.text}
-//             type="text"
-//             placeholder="Upiši svoju poruku i pritisni ENTER"
-//             autofocus="true"
-//             onFocus={console.log("User is typing")}
-//           />
-//           <button>Send</button>
-//         </form>
-//       </div>
-//     );
-//   }
-// }
-
-// export default Input;
+export default Input;

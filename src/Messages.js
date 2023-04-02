@@ -1,38 +1,40 @@
 import React from "react";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useEffect } from "react";
 
-export default function Messages({ messages, currentMember }) {
-  // const krajListe = useRef(null);
+function Messages({ messages, currentMember }) {
+  const bottomRef = useRef(null);
 
-  // useEffect(() => {
-  //   krajListe.current?.scrollIntoView({ behavior: "smooth" });
-  // }, [messages]);
+  //Korištenje useEffecta za pojavu scrolla kada se pojave poruke
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
 
-  const renderMessage = (message, index) => {
-    const { member, text } = message;
+  //Glavna logika prikazivanja poruka sa map funkcijom
+  function renderMessage(message) {
+    const { data, member } = message;
     const messageFromMe = member.id === currentMember.id;
     const className = messageFromMe
       ? "Messages-message currentMember"
       : "Messages-message";
-
     return (
-      <li className={className}>
+      <li className={className} key={Math.random()}>
         <span
           className="avatar"
           style={{ backgroundColor: member.clientData.color }}
         />
         <div className="Message-content">
           <div className="username">{member.clientData.username}</div>
-          <div className="text">{text}</div>
+          <div className="text" ref={bottomRef}>
+            {data}
+          </div>
         </div>
-        ;
       </li>
     );
-  };
+  }
 
   return (
-    <ul className="Messages-list">
-      {messages.map((m, index) => renderMessage(m, index))}
-    </ul>
+    <ul className="Messages-list">{messages.map((m) => renderMessage(m))}</ul>
   );
 }
+
+export default Messages;

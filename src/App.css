@@ -122,3 +122,56 @@ button {
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1),
     0px 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
+
+.App-input-username {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+  height: 100vh;
+  top: 50%;
+  left: 50%;
+}
+
+.display-aktivnih-korisnika {
+  position: absolute;
+  top: 25vh;
+  padding: 5px 5px;
+  max-width: 10vw;
+  width: 100%;
+  list-style: none;
+  padding-left: 0;
+  flex-grow: 1;
+  overflow: auto;
+  border-color: #f36bab;
+
+  border-radius: 1px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  background-color: rgba(244, 204, 241, 0.781);
+  border-radius: 15px;
+  color: rgba(255, 255, 255, 0.801);
+  margin-left: 5px;
+  text-align: center;
+  padding-bottom: 25px;
+}
+
+.form-log-in {
+  display: flex;
+}
+
+.colorpicker {
+  align-self: center;
+  margin: 0px;
+  cursor: pointer;
+  padding: 2px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.input-username {
+  align-self: center;
+  margin: 0px;
+  width: 300px;
+}
