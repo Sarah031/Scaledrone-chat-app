@@ -1,7 +1,7 @@
 import React from "react";
 import { useRef, useEffect } from "react";
 
-function Messages({ messages, currentMember }) {
+export default function Messages({ messages, currentMember }) {
   const bottomRef = useRef(null);
 
   //scroll na poruke
@@ -35,5 +35,3 @@ function Messages({ messages, currentMember }) {
     <ul className="Messages-list">{messages.map((m) => showMessage(m))}</ul>
   );
 }
-
-export default Messages;

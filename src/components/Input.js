@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
-function Input(props) {
+export default function Input(props) {
   const [text, setText] = useState("");
 
-  //Setting state from input
+  //postavaljanje state-a za input
   function onChange(e) {
     setText(e.target.value);
   }
-  //Submit function for input value
+  //F-ija submit za input
   function onSubmit(e) {
     e.preventDefault();
     setText("");
@@ -29,38 +29,3 @@ function Input(props) {
     </div>
   );
 }
-
-export default Input;
-
-// import React, { useState } from "react";
-
-// function Input(props) {
-//   const [text, setText] = useState("");
-
-//   function onChange(e) {
-//     setText(e.target.value);
-//   }
-
-//   function onSubmit(e) {
-//     e.preventDefault();
-//     setText("");
-//     props.onSendMessage(text);
-//   }
-
-//   return (
-//     <div className="Input">
-//       <form onSubmit={onSubmit}>
-//         <input
-//           onChange={onChange}
-//           value={text}
-//           type="text"
-//           placeholder="Upiši svoju poruku"
-//           autoFocus={true}
-//         />
-//         <button>Send</button>
-//       </form>
-//     </div>
-//   );
-// }
-
-// export default Input;
