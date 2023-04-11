@@ -4,13 +4,12 @@ import { useRef, useEffect } from "react";
 function Messages({ messages, currentMember }) {
   const bottomRef = useRef(null);
 
-  //Korištenje useEffecta za pojavu scrolla kada se pojave poruke
+  //scroll na poruke
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
-
   //Glavna logika prikazivanja poruka sa map funkcijom
-  function renderMessage(message) {
+  function showMessage(message) {
     const { data, member } = message;
     const messageFromMe = member.id === currentMember.id;
     const className = messageFromMe
@@ -33,7 +32,7 @@ function Messages({ messages, currentMember }) {
   }
 
   return (
-    <ul className="Messages-list">{messages.map((m) => renderMessage(m))}</ul>
+    <ul className="Messages-list">{messages.map((m) => showMessage(m))}</ul>
   );
 }
 

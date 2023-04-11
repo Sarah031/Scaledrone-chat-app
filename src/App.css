@@ -17,7 +17,6 @@
   background-color: #f36bab;
   content: "";
   position: absolute;
-
   width: 0;
   height: 0;
   border: calc(60 * 0.13) solid transparent;
@@ -42,10 +41,12 @@
 .Messages-message {
   display: flex;
   margin-top: 10px;
+  padding-right: 50px;
+  padding-left: 50px;
 }
 
 .Messages-message.currentMember {
-  /*justify-content: flex-end;*/
+  /* justify-content: flex-end;*/
   flex-direction: row-reverse;
   text-align: right;
 }
