@@ -1,3 +1,3 @@
-export default function RandomColor() {
+export default function randomColor() {
   return "#" + Math.floor(Math.random() * 0xffffff).toString(16);
 }

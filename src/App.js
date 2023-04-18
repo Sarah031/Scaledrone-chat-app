@@ -3,15 +3,15 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import Messages from "./components/Messages";
 import Input from "./components/Input";
-import RandomColor from "./assets/RandomColor";
-import RandomName from "./assets/RandomName";
+import randomColor from "./helpers/randomColor";
+import randomName from "./helpers/randomName";
 
 export default function App() {
   //glavni state-ovi
   const [messages, setMessages] = useState([]);
   const [member, setMember] = useState({
-    username: RandomName(),
-    color: RandomColor(),
+    username: randomName(),
+    color: randomColor(),
   });
   const [drone, setDrone] = useState();
   //Used for first time loading to web app

@@ -5,7 +5,7 @@ export default function Input(props) {
 
   //postavaljanje state-a za input
   function onChange(e) {
-    setText(e.target.value);
+    setText(e.target.value.trimStart());
   }
   //F-ija submit za input
   function onSubmit(e) {
@@ -24,7 +24,7 @@ export default function Input(props) {
           placeholder="Enter your message and press ENTER"
           autoFocus={true}
         />
-        <button>Send</button>
+        <input className="button" type="submit" value="Send" />
       </form>
     </div>
   );

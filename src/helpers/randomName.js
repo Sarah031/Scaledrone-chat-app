@@ -1,5 +1,5 @@
 //Kreiranje random imena
-export default function RandomName() {
+export default function randomName() {
   const ime = [
     "Maria",
     "Pamela",

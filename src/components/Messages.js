@@ -1,5 +1,6 @@
 import React from "react";
 import { useRef, useEffect } from "react";
+import uuid from "react-uuid";
 
 export default function Messages({ messages, currentMember }) {
   const bottomRef = useRef(null);
@@ -16,7 +17,7 @@ export default function Messages({ messages, currentMember }) {
       ? "Messages-message currentMember"
       : "Messages-message";
     return (
-      <li className={className} key={Math.random()}>
+      <li className={className} key={uuid()}>
         <span
           className="avatar"
           style={{ backgroundColor: member.clientData.color }}
