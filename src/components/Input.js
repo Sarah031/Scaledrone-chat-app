@@ -3,11 +3,10 @@ import React, { useState } from "react";
 export default function Input(props) {
   const [text, setText] = useState("");
 
-  //postavaljanje state-a za input
   function onChange(e) {
     setText(e.target.value.trimStart());
   }
-  //F-ija submit za input
+
   function onSubmit(e) {
     e.preventDefault();
     setText("");

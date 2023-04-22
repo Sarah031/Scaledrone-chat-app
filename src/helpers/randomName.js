@@ -1,4 +1,3 @@
-//Kreiranje random imena
 export default function randomName() {
   const ime = [
     "Maria",

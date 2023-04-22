@@ -7,23 +7,20 @@ import randomColor from "./helpers/randomColor";
 import randomName from "./helpers/randomName";
 
 export default function App() {
-  //glavni state-ovi
   const [messages, setMessages] = useState([]);
   const [member, setMember] = useState({
     username: randomName(),
     color: randomColor(),
   });
   const [drone, setDrone] = useState();
-  //Used for first time loading to web app
+
   useEffect(() => {
-    //povezivanje sa Scaledrone-om
     const drone = new window.Scaledrone(process.env.REACT_APP_SCALEDRONE_ID, {
       data: member,
     });
     setDrone(drone);
   }, [member]);
 
-  //Uspostavljanje veze kao user
   useEffect(() => {
     if (drone) {
       drone.on("open", (error) => {
@@ -35,7 +32,7 @@ export default function App() {
         console.log("Uspješni log in");
         setMember(member);
       });
-      //Spajanje u određenu chat sobu "observable-room"
+
       const room = drone.subscribe("observable-room");
       room.on("message", (message) => {
         setMessages((prevState) => [...prevState, message]);
@@ -43,7 +40,6 @@ export default function App() {
     }
   }, [drone, member]);
 
-  //f-ija za slanje poruka u sobu
   const handleInput = (message) => {
     drone.publish({ room: "observable-room", message });
   };

@@ -5,11 +5,10 @@ import uuid from "react-uuid";
 export default function Messages({ messages, currentMember }) {
   const bottomRef = useRef(null);
 
-  //scroll na poruke
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
-  //Glavna logika prikazivanja poruka sa map funkcijom
+
   function showMessage(message) {
     const { data, member } = message;
     const messageFromMe = member.id === currentMember.id;
