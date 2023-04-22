@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Scaledrone-chat-app/static/css/main.5da372d8.css",
-    "main.js": "/Scaledrone-chat-app/static/js/main.d1d59119.js",
+    "main.css": "/Scaledrone-chat-app/static/css/main.7159ae54.css",
+    "main.js": "/Scaledrone-chat-app/static/js/main.4353c233.js",
     "index.html": "/Scaledrone-chat-app/index.html",
-    "main.5da372d8.css.map": "/Scaledrone-chat-app/static/css/main.5da372d8.css.map",
-    "main.d1d59119.js.map": "/Scaledrone-chat-app/static/js/main.d1d59119.js.map"
+    "main.7159ae54.css.map": "/Scaledrone-chat-app/static/css/main.7159ae54.css.map",
+    "main.4353c233.js.map": "/Scaledrone-chat-app/static/js/main.4353c233.js.map"
   },
   "entrypoints": [
-    "static/css/main.5da372d8.css",
-    "static/js/main.d1d59119.js"
+    "static/css/main.7159ae54.css",
+    "static/js/main.4353c233.js"
   ]
 }
