@@ -118,7 +118,7 @@ export default function randomName() {
     "daisy",
   ];
 
-  const userName = ime[Math.floor(Math.random() * opis.length)];
-  const userSurname = opis[Math.floor(Math.random() * ime.length)];
+  const userName = ime[Math.floor(Math.random() * ime.length)];
+  const userSurname = opis[Math.floor(Math.random() * opis.length)];
   return `${userName} ${userSurname}`;
 }
